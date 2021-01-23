@@ -1,12 +1,26 @@
 import './App.scss';
 import React from 'react';
-import {BoardView} from "./board/BoardView";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from 'react-router-dom';
+import {TestBoardPage} from "./board/TestBoardPage";
+import {HomePage} from "./home/HomePage";
 
 function App() {
     return (
         <div className="App">
-            <h1>Otrio</h1>
-            <BoardView />
+            <Router>
+                <Switch>
+                    <Route path="/board">
+                        <TestBoardPage />
+                    </Route>
+                    <Route path="/">
+                        <HomePage />
+                    </Route>
+                </Switch>
+            </Router>
         </div>
   );
 }

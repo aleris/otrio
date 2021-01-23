@@ -1,0 +1,28 @@
+.home {
+  h1 {
+    font-size: 7vmin;
+    color: darkorange;
+  }
+
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin-top: 1vmin;
+
+        a {
+          text-decoration: none;
+          color: #111;
+          font-size: 3vmin;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
