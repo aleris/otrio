@@ -5,7 +5,7 @@ import {
     Switch,
     Route
 } from 'react-router-dom';
-import {TestBoardPage} from "./board/TestBoardPage";
+import {BoardTestPage} from "./board/BoardTestPage";
 import {HomePage} from "./home/HomePage";
 import {TestRingPage} from "./ring/TestRingPage";
 
@@ -18,7 +18,7 @@ function App() {
                         <TestRingPage />
                     </Route>
                     <Route path="/board">
-                        <TestBoardPage />
+                        <BoardTestPage />
                     </Route>
                     <Route path="/">
                         <HomePage />
