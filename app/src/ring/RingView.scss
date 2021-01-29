@@ -1,0 +1,22 @@
+.ringBackground {
+  height: 10vh;
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: blue;
+}
+
+.ring {
+  height: 10vmin;
+  width: 10vmin;
+  background-image: url(./RingShape.svg);
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  svg {
+    path {
+      fill: black;
+    }
+  }
+}
