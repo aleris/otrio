@@ -1,5 +1,5 @@
 export enum RingSize {
-    SMALL,
-    MEDIUM,
-    LARGE
+  SMALL,
+  MEDIUM,
+  LARGE,
 }

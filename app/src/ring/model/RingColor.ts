@@ -1,6 +1,6 @@
 export enum RingColor {
-    RED,
-    BLUE,
-    GREEN,
-    PURPLE
+  RED,
+  BLUE,
+  GREEN,
+  PURPLE,
 }
