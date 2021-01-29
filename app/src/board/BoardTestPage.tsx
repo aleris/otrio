@@ -1,6 +1,11 @@
 import React from "react";
 import { BoardTableView } from "./BoardTableView";
+import { BoardProvider } from "./BoardContext";
 
 export const BoardTestPage = () => {
-  return <BoardTableView />;
+  return (
+    <BoardProvider>
+      <BoardTableView />
+    </BoardProvider>
+  );
 };
