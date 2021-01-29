@@ -8,6 +8,7 @@ import {
 import {BoardTestPage} from "./board/BoardTestPage";
 import {HomePage} from "./home/HomePage";
 import {TestRingPage} from "./ring/TestRingPage";
+import {GridTestPage} from "./grid/GridTestPage";
 
 function App() {
     return (
@@ -19,6 +20,9 @@ function App() {
                     </Route>
                     <Route path="/board">
                         <BoardTestPage />
+                    </Route>
+                    <Route path="/grid">
+                        <GridTestPage />
                     </Route>
                     <Route path="/">
                         <HomePage />
