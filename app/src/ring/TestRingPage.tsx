@@ -1,7 +1,7 @@
 import React from "react";
 import {RingView} from "./RingView";
-import {RingSize} from "./RingSize";
-import {RingColor} from "./RingColor";
+import {RingSize} from "./model/RingSize";
+import {RingColor} from "./model/RingColor";
 
 export const TestRingPage = () => {
     return (

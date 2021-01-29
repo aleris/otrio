@@ -1,7 +1,7 @@
 import './RingView.scss';
 import React from "react";
-import {RingSize} from "./RingSize";
-import {RingColor} from "./RingColor";
+import {RingSize} from "./model/RingSize";
+import {RingColor} from "./model/RingColor";
 
 type Props = {
     size: RingSize
