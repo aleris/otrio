@@ -2,14 +2,10 @@ import './BoardTableView.scss'
 import React from "react";
 import {BoardView} from "./BoardView";
 
-type Props = {
-    debugView?: boolean
-}
-
-export const BoardTableView = ({debugView = false}: Props) => {
+export const BoardTableView = () => {
     return (
         <div className="BoardTable">
-            <BoardView debugView={debugView} />
+            <BoardView debugView={true} />
         </div>
     )
 }
