@@ -1,15 +1,15 @@
 .BlockDebug {
-    width: calc(100% - 5px);
-    height: calc(100% - 5px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparentize(#FFCC00, 0.8);
-    color: #FF9900;
-    font-size: 4vmin;
-    text-align: center;
+  width: calc(100% - 5px);
+  height: calc(100% - 5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparentize(#ffcc00, 0.8);
+  color: #ff9900;
+  font-size: 4vmin;
+  text-align: center;
 
-    &:hover {
-        background-color: transparentize(#003399, 0.8);
-    }
+  &:hover {
+    background-color: transparentize(#003399, 0.8);
+  }
 }

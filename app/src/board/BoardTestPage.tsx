@@ -1,6 +1,6 @@
 import React from "react";
-import {BoardTableView} from "./BoardTableView";
+import { BoardTableView } from "./BoardTableView";
 
 export const BoardTestPage = () => {
-    return <BoardTableView />
-}
+  return <BoardTableView />;
+};
