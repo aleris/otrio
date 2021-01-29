@@ -1,41 +1,50 @@
-.boardBackground {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: repeating-linear-gradient(45deg, #666 0, #666 5%, #888 0, #888 50%) 0 / 10px 10px;
-}
+$boardBlockSize-x1: 100% / 5;
+$boardBlockSize-x3: $boardBlockSize-x1 * 3;
 
-.board {
+.Board {
   height: 100vmin;
   width: 100vmin;
-  background-image: url(./BoardBackground.svg);
+  background-image: url(./Board.svg);
   background-size: cover;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
 
-  &--cell {
-    flex: 1 0 (100%/6 + 1%);
+  &--Block {
+    &--x1 {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex: 1 0 $boardBlockSize-x1;
+    }
+
+    &--x3 {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex: 1 0 $boardBlockSize-x3;
+    }
+  }
+
+  &--Grid {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    flex-wrap: wrap;
 
-    &.debugView {
+    &--Cell {
+      flex: 1 0 33.3%;
       display: flex;
       justify-content: center;
       align-items: center;
-
-      span {
-        width: 16vmin;
-        height: 16vmin;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.1);
-        color: darkorange;
-        font-size: 7vmin;
-      }
     }
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .Board {
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
   }
 }

@@ -4,7 +4,7 @@ import React from "react";
 
 export const HomePage = () => {
     return (
-        <div className="home">
+        <div className="Home">
             <h1>Otrio</h1>
 
             <nav>
