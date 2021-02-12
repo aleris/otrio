@@ -1,11 +1,11 @@
 import React from "react";
 import { BoardTableView } from "./BoardTableView";
-import { BoardProvider } from "./BoardContext";
+import { GameProvider } from "../GameContext";
 
 export const BoardTestPage = () => {
   return (
-    <BoardProvider>
+    <GameProvider>
       <BoardTableView />
-    </BoardProvider>
+    </GameProvider>
   );
 };

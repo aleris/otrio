@@ -1,5 +1,5 @@
 import { Ring } from "../../ring/model/Ring";
 
-export interface Cell {
-  [key: number]: Ring;
-}
+export type Cell = {
+  [key: number /*RingSize*/]: Ring;
+};

@@ -1,17 +1,17 @@
 import "./BoardTableView.scss";
 import React, { useContext } from "react";
 import { BoardView } from "./BoardView";
-import { BoardContext } from "./BoardContext";
+import { GameContext } from "../GameContext";
 import { RingColor } from "../ring/model/RingColor";
 import { RingSize } from "../ring/model/RingSize";
-import { createPlayerJoinAction } from "./actions/PlayerJoinAction";
+import { playerJoinAction } from "../actions/PlayerJoinAction";
 
 export const BoardTableView = () => {
-  const { board, dispatch } = useContext(BoardContext);
+  const { state, dispatch } = useContext(GameContext);
 
   const onPlayerJoinClick = (color: RingColor) => {
     dispatch(
-      createPlayerJoinAction({
+      playerJoinAction({
         id: "",
         name: `Color ${color}`,
         color: color,
@@ -24,7 +24,7 @@ export const BoardTableView = () => {
   return (
     <div className="BoardTable">
       <BoardView
-        board={board}
+        board={state.board}
         onPlayerJoinClick={onPlayerJoinClick}
         debugView={true}
       />
