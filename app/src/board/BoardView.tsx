@@ -17,9 +17,7 @@ export const BoardView = ({
   debugView = false,
 }: Props) => {
   const className = classNames("Board", { debugView });
-  const playerTop = board.players.find(
-    (boardPlayer) => boardPlayer.color === RingColor.BLUE
-  );
+  const playerTop = board.players[RingColor.BLUE];
 
   return (
     <div className={className}>

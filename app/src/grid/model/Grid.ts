@@ -1,5 +1,5 @@
 import { Cell } from "./Cell";
 
-export interface Grid {
-  [key: string]: Cell;
-}
+export type Grid = {
+  [key: string /*`${rowIndex}${colIndex}`*/]: Cell;
+};
