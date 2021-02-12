@@ -40,13 +40,7 @@ const boardReducer = (board: Board, action: BoardAction) => {
 };
 
 const emptyBoard: Board = {
-  grid: {
-    cells: [
-      [{ rings: [] }, { rings: [] }, { rings: [] }],
-      [{ rings: [] }, { rings: [] }, { rings: [] }],
-      [{ rings: [] }, { rings: [] }, { rings: [] }],
-    ],
-  },
+  grid: {},
   players: [],
 };
 
