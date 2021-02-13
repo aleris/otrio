@@ -1,5 +1,9 @@
 import { Cell } from "./Cell";
 
+type GridRowIndex = 0 | 1 | 2;
+type GridColIndex = 0 | 1 | 2;
+type GridCoordinate = `${GridRowIndex}${GridColIndex}`;
+
 export type Grid = {
-  [key: string /*`${rowIndex}${colIndex}`*/]: Cell;
+  [key in GridCoordinate]?: Cell;
 };
