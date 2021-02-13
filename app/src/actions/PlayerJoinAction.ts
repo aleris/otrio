@@ -20,8 +20,8 @@ export const playerJoinReducer = (
       ...state.board,
       players: {
         ...state.board.players,
-        [player.color]: player
-      }
+        [player.color]: player,
+      },
     },
   };
 };

@@ -50,7 +50,7 @@ const gameReducer = (state: GameState, action: GameActionType): GameState => {
 
 const emptyBoard: Board = {
   grid: {},
-  players: [],
+  players: {},
 };
 
 const initialState = {
