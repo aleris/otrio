@@ -1,6 +1,7 @@
 import "./BoardView.scss";
 import React from "react";
 import classNames from "classnames";
+import { GridView } from "../grid/GridView";
 import { Board } from "./model/Board";
 import { BlockDebugView } from "./BlockDebugView";
 import { RingColor } from "../ring/model/RingColor";
@@ -17,7 +18,7 @@ export const BoardView = ({
   debugView = false,
 }: Props) => {
   const className = classNames("Board", { debugView });
-  const playerTop = board.players[RingColor.BLUE];
+  const playerTop = board.players[RingColor.COLOR_2];
 
   return (
     <div className={className}>
@@ -27,7 +28,7 @@ export const BoardView = ({
         </div>
         <div
           className="Board--Block--x3"
-          onClick={() => onPlayerJoinClick(RingColor.BLUE)}
+          onClick={() => onPlayerJoinClick(RingColor.COLOR_2)}
         >
           <BlockDebugView
             show={debugView}
@@ -44,16 +45,7 @@ export const BoardView = ({
           <BlockDebugView show={debugView} text="Player Left" />
         </div>
         <div className="Board--Block--x3 Board--Grid">
-          {Array.from({ length: 3 }).map((_, rowIndex) =>
-            Array.from({ length: 3 }).map((_, colIndex) => (
-              <div key={3 * rowIndex + colIndex} className="Board--Grid--Cell">
-                <BlockDebugView
-                  show={debugView}
-                  text={`${rowIndex} : ${colIndex}`}
-                />
-              </div>
-            ))
-          )}
+          <GridView grid={board.grid} />
         </div>
         <div className="Board--Block--x1">
           <BlockDebugView show={debugView} text="Player Right" />

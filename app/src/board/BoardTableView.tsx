@@ -15,7 +15,7 @@ export const BoardTableView = () => {
         id: "",
         name: `Color ${color}`,
         color: color,
-        rings: [{ color: RingColor.BLUE, size: RingSize.SMALL }],
+        rings: [{ color: RingColor.COLOR_2, size: RingSize.SMALL }],
         isWinner: false,
       })
     );

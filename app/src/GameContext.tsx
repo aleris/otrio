@@ -1,20 +1,22 @@
 import React, { createContext, Dispatch, useReducer } from "react";
-import { Board } from "./board/model/Board";
 import {
+  DropRingActionCode,
   DropRingActionType,
   dropRingReducer,
-  DropRingActionCode,
 } from "./actions/DropRingActionType";
 import {
+  PickRingActionCode,
   PickRingActionType,
   pickRingReducer,
-  PickRingActionCode,
 } from "./actions/PickRingActionType";
 import {
+  PlayerJoinActionCode,
   PlayerJoinActionType,
   playerJoinReducer,
-  PlayerJoinActionCode,
 } from "./actions/PlayerJoinAction";
+import { Board } from "./board/model/Board";
+import { RingColor } from "./ring/model/RingColor";
+import { RingSize } from "./ring/model/RingSize";
 
 export type GameActionType =
   | DropRingActionType
@@ -49,7 +51,15 @@ const gameReducer = (state: GameState, action: GameActionType): GameState => {
 };
 
 const emptyBoard: Board = {
-  grid: {},
+  grid: {
+    "01": {
+      [RingSize.MEDIUM]: { size: RingSize.MEDIUM, color: RingColor.COLOR_4 },
+      [RingSize.LARGE]: { size: RingSize.LARGE, color: RingColor.COLOR_3 },
+    },
+    "12": {
+      [RingSize.SMALL]: { size: RingSize.SMALL, color: RingColor.COLOR_2 },
+    },
+  },
   players: {},
 };
 

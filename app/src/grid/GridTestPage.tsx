@@ -6,11 +6,11 @@ import { RingSize } from "../ring/model/RingSize";
 
 const grid: Grid = {
   "01": {
-    [RingSize.SMALL]: { size: RingSize.SMALL, color: RingColor.PURPLE },
+    [RingSize.SMALL]: { size: RingSize.SMALL, color: RingColor.COLOR_4 },
   },
   "11": {
-    [RingSize.MEDIUM]: { size: RingSize.MEDIUM, color: RingColor.BLUE },
-    [RingSize.LARGE]: { size: RingSize.LARGE, color: RingColor.GREEN },
+    [RingSize.MEDIUM]: { size: RingSize.MEDIUM, color: RingColor.COLOR_2 },
+    [RingSize.LARGE]: { size: RingSize.LARGE, color: RingColor.COLOR_3 },
   },
 };
 
