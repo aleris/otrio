@@ -1,5 +1,7 @@
+import "./CellView.scss";
 import React from "react";
 import { Cell } from "./model/Cell";
+import { StackedRingsView } from "./StackedRingsView";
 
 type Props = {
   cell: Cell | undefined;
@@ -7,12 +9,8 @@ type Props = {
 
 export const CellView = ({ cell }: Props) => {
   return (
-    <div>
-      {cell
-        ? Array.from({ length: 3 }).map((_, index) =>
-            cell[index] ? <span>{index}</span> : null
-          )
-        : null}
+    <div className="Cell">
+      <StackedRingsView cell={cell} />
     </div>
   );
 };

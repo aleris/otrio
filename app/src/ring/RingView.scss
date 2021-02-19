@@ -1,6 +1,9 @@
-.ring {
+.Ring {
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   svg {
     height: 100%;
@@ -8,6 +11,52 @@
 
     path {
       fill: red;
+    }
+  }
+
+  &--Color1 {
+    svg {
+      path {
+        fill: red;
+      }
+    }
+  }
+
+  &--Color2 {
+    svg {
+      path {
+        fill: blue;
+      }
+    }
+  }
+
+  &--Color3 {
+    svg {
+      path {
+        fill: purple;
+      }
+    }
+  }
+
+  &--Color4 {
+    svg {
+      path {
+        fill: green;
+      }
+    }
+  }
+
+  &--SizeSmall {
+    svg {
+      width: 50%;
+      height: 50%;
+    }
+  }
+
+  &--SizeMedium {
+    svg {
+      width: 75%;
+      height: 75%;
     }
   }
 }
