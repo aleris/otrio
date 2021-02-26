@@ -5,6 +5,7 @@ import { GridView } from "../grid/GridView";
 import { Board } from "./model/Board";
 import { BlockDebugView } from "./BlockDebugView";
 import { RingColor } from "../ring/model/RingColor";
+import { PlayerView } from "../player/PlayerView";
 
 type Props = {
   board: Board;
@@ -19,6 +20,7 @@ export const BoardView = ({
 }: Props) => {
   const className = classNames("Board", { debugView });
   const playerTop = board.players[RingColor.COLOR_2];
+  const playerBottom = board.players[RingColor.COLOR_1];
 
   return (
     <div className={className}>
@@ -57,7 +59,9 @@ export const BoardView = ({
           <BlockDebugView show={debugView} text="Bottom Left Corner" />
         </div>
         <div className="Board--Block--x3">
-          <BlockDebugView show={debugView} text="Player Bottom" />
+          {playerBottom !== undefined ? (
+            <PlayerView player={playerBottom}></PlayerView>
+          ) : null}
         </div>
         <div className="Board--Block--x1">
           <BlockDebugView show={debugView} text="Bottom Right Corner" />

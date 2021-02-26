@@ -61,7 +61,24 @@ const emptyBoard: Board = {
       [RingSize.SMALL]: { size: RingSize.SMALL, color: RingColor.COLOR_2 },
     },
   },
-  players: {},
+  players: {
+    [RingColor.COLOR_1]: {
+      id: "1",
+      name: "player1",
+      color: RingColor.COLOR_1,
+      cells: [
+        {
+          [RingSize.SMALL]: { size: RingSize.SMALL, color: RingColor.COLOR_1 },
+          [RingSize.MEDIUM]: {
+            size: RingSize.MEDIUM,
+            color: RingColor.COLOR_1,
+          },
+          [RingSize.LARGE]: { size: RingSize.LARGE, color: RingColor.COLOR_1 },
+        },
+      ],
+      isWinner: false,
+    },
+  },
 };
 
 const initialState = {
