@@ -55,6 +55,7 @@ const emptyBoard: Board = {
     "01": {
       [RingSize.MEDIUM]: { size: RingSize.MEDIUM, color: RingColor.COLOR_4 },
       [RingSize.LARGE]: { size: RingSize.LARGE, color: RingColor.COLOR_3 },
+      [RingSize.SMALL]: { size: RingSize.SMALL, color: RingColor.COLOR_1 },
     },
     "12": {
       [RingSize.SMALL]: { size: RingSize.SMALL, color: RingColor.COLOR_2 },
