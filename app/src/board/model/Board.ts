@@ -6,9 +6,9 @@ export type Board = {
   grid: Grid;
   players: {
     [key in
+      | RingColor.COLOR_1
       | RingColor.COLOR_2
       | RingColor.COLOR_3
-      | RingColor.COLOR_4
-      | RingColor.COLOR_1]?: Player;
+      | RingColor.COLOR_4]?: Player;
   };
 };

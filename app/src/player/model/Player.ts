@@ -1,10 +1,10 @@
-import { Ring } from "../../ring/model/Ring";
 import { RingColor } from "../../ring/model/RingColor";
+import { Cell } from "../../grid/model/Cell";
 
 export interface Player {
   id: string;
   name: string;
   color: RingColor;
-  rings: Array<Ring>;
+  cells: Array<Cell>;
   isWinner: boolean;
 }
