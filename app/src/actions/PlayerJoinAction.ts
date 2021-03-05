@@ -36,7 +36,8 @@ async function testAsync(): Promise<void> {
 }
 
 export const playerJoinAction = (player: Player) => async (
-  dispatch: Dispatch<PlayerJoinActionType>
+  dispatch: Dispatch<PlayerJoinActionType>,
+  state: GameState
 ) => {
   console.log("playerJoinAction initiate", player);
   await testAsync();

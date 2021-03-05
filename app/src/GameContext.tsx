@@ -27,11 +27,29 @@ export type GameState = {
   board: Board;
 };
 
+export type GameAction = (
+  dispatch: GameActionDispatch,
+  state: GameState
+) => void;
+
+export type GameActionDispatch = Dispatch<GameAction | GameActionType>;
+
+const dispatchWithGameAction = (
+  dispatch: Dispatch<GameActionType>,
+  state: GameState
+) => async (action: GameAction | GameActionType) => {
+  if (action instanceof Function) {
+    console.log("action", action.name, "->");
+    await action(dispatchWithGameAction(dispatch, state), state);
+  } else {
+    console.log("action", action.code, action);
+    await dispatch(action);
+  }
+};
+
 type GameStateWithDispatch = {
+  dispatch: GameActionDispatch;
   state: GameState;
-  dispatch: (
-    dispatchAction: (dispatch: Dispatch<GameActionType>) => Promise<void>
-  ) => void;
 };
 
 const gameReducer = (state: GameState, action: GameActionType): GameState => {
@@ -97,9 +115,7 @@ export const GameProvider: React.FunctionComponent = ({ children }) => {
     <GameContext.Provider
       value={{
         state,
-        dispatch: (
-          dispatchAction: (dispatch: Dispatch<GameActionType>) => void
-        ) => dispatchAction(dispatch),
+        dispatch: dispatchWithGameAction(dispatch, state),
       }}
     >
       {children}

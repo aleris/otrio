@@ -26,7 +26,7 @@ export const dropRingAction = (
   droppedRing: Ring,
   rowIndex: number,
   colIndex: number
-) => async (dispatch: Dispatch<DropRingActionType>) => {
+) => async (dispatch: Dispatch<DropRingActionType>, state: GameState) => {
   dispatch({
     code: DropRingActionCode,
     player,

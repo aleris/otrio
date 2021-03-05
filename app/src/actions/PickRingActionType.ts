@@ -20,7 +20,8 @@ export const pickRingReducer = (
 };
 
 export const pickRingAction = (player: Player, pickedRing: Ring) => async (
-  dispatch: Dispatch<PickRingActionType>
+  dispatch: Dispatch<PickRingActionType>,
+  state: GameState
 ) => {
   dispatch({
     code: PickRingActionCode,
