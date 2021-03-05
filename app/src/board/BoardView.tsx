@@ -19,8 +19,10 @@ export const BoardView = ({
   debugView = false,
 }: Props) => {
   const className = classNames("Board", { debugView });
-  const playerTop = board.players[RingColor.COLOR_2];
-  const playerBottom = board.players[RingColor.COLOR_1];
+  const playerTop = board.players[RingColor.COLOR_1];
+  const playerRight = board.players[RingColor.COLOR_2];
+  const playerBottom = board.players[RingColor.COLOR_3];
+  const playerLeft = board.players[RingColor.COLOR_4];
 
   return (
     <div className={className}>
@@ -28,14 +30,10 @@ export const BoardView = ({
         <div className="Board--Block--x1">
           <BlockDebugView show={debugView} text="Top Left Corner" />
         </div>
-        <div
-          className="Board--Block--x3"
-          onClick={() => onPlayerJoinClick(RingColor.COLOR_2)}
-        >
-          <BlockDebugView
-            show={debugView}
-            text={`Player Blue ${playerTop ? " JOINED" : ""}`}
-          />
+        <div className="Board--Block--x3">
+          {playerTop !== undefined ? (
+            <PlayerView player={playerTop} layout="Horizontal" />
+          ) : null}
         </div>
         <div className="Board--Block--x1">
           <BlockDebugView show={debugView} text="Top Right Corner" />
@@ -44,13 +42,17 @@ export const BoardView = ({
 
       <div className="Board--Block--x3">
         <div className="Board--Block--x1">
-          <BlockDebugView show={debugView} text="Player Left" />
+          {playerLeft !== undefined ? (
+            <PlayerView player={playerLeft} layout="Vertical" />
+          ) : null}
         </div>
         <div className="Board--Block--x3 Board--Grid">
           <GridView grid={board.grid} />
         </div>
         <div className="Board--Block--x1">
-          <BlockDebugView show={debugView} text="Player Right" />
+          {playerRight !== undefined ? (
+            <PlayerView player={playerRight} layout="Vertical" />
+          ) : null}
         </div>
       </div>
 
@@ -60,7 +62,7 @@ export const BoardView = ({
         </div>
         <div className="Board--Block--x3">
           {playerBottom !== undefined ? (
-            <PlayerView player={playerBottom}></PlayerView>
+            <PlayerView player={playerBottom} layout="Horizontal" />
           ) : null}
         </div>
         <div className="Board--Block--x1">
