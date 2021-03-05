@@ -85,6 +85,7 @@ const emptyBoard: Board = {
       name: "player1",
       color: RingColor.COLOR_1,
       cells: [
+        {},
         {
           [RingSize.SMALL]: { size: RingSize.SMALL, color: RingColor.COLOR_1 },
           [RingSize.MEDIUM]: {
@@ -93,6 +94,31 @@ const emptyBoard: Board = {
           },
           [RingSize.LARGE]: { size: RingSize.LARGE, color: RingColor.COLOR_1 },
         },
+        {
+          [RingSize.MEDIUM]: {
+            size: RingSize.MEDIUM,
+            color: RingColor.COLOR_1,
+          },
+        },
+      ],
+      isWinner: false,
+    },
+    [RingColor.COLOR_2]: {
+      id: "2",
+      name: "player2",
+      color: RingColor.COLOR_2,
+      cells: [
+        {
+          [RingSize.LARGE]: {
+            size: RingSize.LARGE,
+            color: RingColor.COLOR_2,
+          },
+        },
+        {
+          [RingSize.SMALL]: { size: RingSize.SMALL, color: RingColor.COLOR_2 },
+          [RingSize.LARGE]: { size: RingSize.LARGE, color: RingColor.COLOR_2 },
+        },
+        {},
       ],
       isWinner: false,
     },
