@@ -1,0 +1,29 @@
+@import "../colors";
+
+.StartPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 32rem;
+
+  &--StartButton {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: transparent;
+    border: 1px solid $border-color;
+    border-radius: 1rem;
+    outline: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lightskyblue;
+    }
+
+    &:focus,
+    &:active {
+      box-shadow: 0 0 0 2px $border-color-active;
+    }
+  }
+}

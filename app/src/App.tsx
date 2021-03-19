@@ -5,6 +5,7 @@ import { BoardTestPage } from "./board/BoardTestPage";
 import { HomePage } from "./home/HomePage";
 import { TestRingPage } from "./ring/TestRingPage";
 import { GridTestPage } from "./grid/GridTestPage";
+import { StartPage } from "./start/StartPage";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/grid">
             <GridTestPage />
+          </Route>
+          <Route path="/start">
+            <StartPage />
           </Route>
           <Route path="/">
             <HomePage />

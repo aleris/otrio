@@ -1,0 +1,27 @@
+@import "../colors";
+
+.PlayerNumber {
+  button {
+    margin: 0.25rem;
+    background-color: white;
+    border: 1px solid $border-color;
+    border-radius: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    outline: none;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+
+    &:focus,
+    &:active {
+      box-shadow: 0 0 0 2px $border-color-active;
+    }
+  }
+
+  &.Selected {
+    button {
+      background-color: lightskyblue;
+    }
+  }
+}

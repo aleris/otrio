@@ -1,0 +1,16 @@
+.PlayerNumberList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--PlayerIcon {
+    width: 2rem;
+    height: 2rem;
+
+    svg {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+}

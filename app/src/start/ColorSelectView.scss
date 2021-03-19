@@ -1,0 +1,68 @@
+@import "../colors";
+
+.ColorSelect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--Color {
+    button {
+      margin: 0.25rem;
+      width: 2rem;
+      height: 2rem;
+      border: 2px solid transparent;
+      background-color: transparent;
+      outline: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:focus,
+      &:active {
+        box-shadow: 0 0 0 2px $border-color-active;
+      }
+    }
+  }
+
+  &--Color1 {
+    button {
+      border-color: $ring-color-1;
+    }
+  }
+  &--Color2 {
+    button {
+      border-color: $ring-color-2;
+    }
+  }
+  &--Color3 {
+    button {
+      border-color: $ring-color-3;
+    }
+  }
+  &--Color4 {
+    button {
+      border-color: $ring-color-4;
+    }
+  }
+
+  &--Color1.Selected {
+    button {
+      background-color: $ring-color-1;
+    }
+  }
+  &--Color2.Selected {
+    button {
+      background-color: $ring-color-2;
+    }
+  }
+  &--Color3.Selected {
+    button {
+      background-color: $ring-color-3;
+    }
+  }
+  &--Color4.Selected {
+    button {
+      background-color: $ring-color-4;
+    }
+  }
+}

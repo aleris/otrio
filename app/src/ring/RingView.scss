@@ -1,3 +1,5 @@
+@import "../colors";
+
 .Ring {
   height: 100%;
   width: 100%;
@@ -17,7 +19,7 @@
   &--Color1 {
     svg {
       path {
-        fill: red;
+        fill: $ring-color-1;
       }
     }
   }
@@ -25,7 +27,7 @@
   &--Color2 {
     svg {
       path {
-        fill: blue;
+        fill: $ring-color-2;
       }
     }
   }
@@ -33,7 +35,7 @@
   &--Color3 {
     svg {
       path {
-        fill: purple;
+        fill: $ring-color-3;
       }
     }
   }
@@ -41,7 +43,7 @@
   &--Color4 {
     svg {
       path {
-        fill: green;
+        fill: $ring-color-4;
       }
     }
   }

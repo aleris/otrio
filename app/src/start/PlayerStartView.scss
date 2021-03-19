@@ -1,0 +1,11 @@
+@import "../colors";
+
+.PlayerStart {
+  display: flex;
+
+  input {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid $border-color;
+  }
+}

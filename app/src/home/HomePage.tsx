@@ -21,6 +21,9 @@ export const HomePage = () => {
           <li>
             <Link to="/grid">Grid Test</Link>
           </li>
+          <li>
+            <Link to="/start">Start Page</Link>
+          </li>
         </ul>
       </nav>
     </div>
