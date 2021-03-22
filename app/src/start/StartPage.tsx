@@ -48,15 +48,17 @@ export const StartPage = () => {
     }
     const colorSwapPlayerChanged = {
       ...players[colorSwapPlayerIndex],
-      color: players[index].color,
+      ...players[index],
     };
     let newList = players;
     newList = withMutatedAt(newList, index, changedPlayer);
-    newList = withMutatedAt(
-      newList,
-      colorSwapPlayerIndex,
-      colorSwapPlayerChanged
-    );
+    if (colorSwapPlayerIndex !== index) {
+      newList = withMutatedAt(
+        newList,
+        colorSwapPlayerIndex,
+        colorSwapPlayerChanged
+      );
+    }
     setPlayers(newList);
     setCurrentPlayers(newList.slice(0, currentPlayers.length));
   };
