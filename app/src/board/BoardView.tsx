@@ -6,18 +6,15 @@ import { Board } from "./model/Board";
 import { BlockDebugView } from "./BlockDebugView";
 import { RingColor } from "../ring/model/RingColor";
 import { PlayerView } from "../player/PlayerView";
+import { Ring } from "../ring/model/Ring";
 
 type Props = {
   board: Board;
-  onPlayerJoinClick: (color: RingColor) => void;
   debugView?: boolean;
+  onRingClick: (ring: Ring) => void;
 };
 
-export const BoardView = ({
-  board,
-  onPlayerJoinClick,
-  debugView = false,
-}: Props) => {
+export const BoardView = ({ board, onRingClick, debugView = false }: Props) => {
   const className = classNames("Board", { debugView });
   const playerTop = board.players[RingColor.COLOR_1];
   const playerRight = board.players[RingColor.COLOR_2];
@@ -32,7 +29,11 @@ export const BoardView = ({
         </div>
         <div className="Board--Block--x3">
           {playerTop !== undefined ? (
-            <PlayerView player={playerTop} layout="Horizontal" />
+            <PlayerView
+              player={playerTop}
+              onRingClick={onRingClick}
+              layout="Horizontal"
+            />
           ) : null}
         </div>
         <div className="Board--Block--x1">
@@ -43,7 +44,11 @@ export const BoardView = ({
       <div className="Board--Block--x3">
         <div className="Board--Block--x1">
           {playerLeft !== undefined ? (
-            <PlayerView player={playerLeft} layout="Vertical" />
+            <PlayerView
+              player={playerLeft}
+              onRingClick={onRingClick}
+              layout="Vertical"
+            />
           ) : null}
         </div>
         <div className="Board--Block--x3 Board--Grid">
@@ -51,7 +56,11 @@ export const BoardView = ({
         </div>
         <div className="Board--Block--x1">
           {playerRight !== undefined ? (
-            <PlayerView player={playerRight} layout="Vertical" />
+            <PlayerView
+              player={playerRight}
+              onRingClick={onRingClick}
+              layout="Vertical"
+            />
           ) : null}
         </div>
       </div>
@@ -62,7 +71,11 @@ export const BoardView = ({
         </div>
         <div className="Board--Block--x3">
           {playerBottom !== undefined ? (
-            <PlayerView player={playerBottom} layout="Horizontal" />
+            <PlayerView
+              player={playerBottom}
+              onRingClick={onRingClick}
+              layout="Horizontal"
+            />
           ) : null}
         </div>
         <div className="Board--Block--x1">

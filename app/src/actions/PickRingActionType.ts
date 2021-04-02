@@ -1,5 +1,4 @@
 import { Dispatch } from "react";
-import { Player } from "../player/model/Player";
 import { GameState } from "../GameContext";
 import { Ring } from "../ring/model/Ring";
 
@@ -7,25 +6,37 @@ export const PickRingActionCode = "PickRing";
 
 export type PickRingActionType = {
   code: typeof PickRingActionCode;
-  player: Player;
   pickedRing: Ring;
 };
 
 export const pickRingReducer = (
   state: GameState,
-  { player, pickedRing }: PickRingActionType
-) => {
-  // TODO: mutate board
-  return state;
+  { pickedRing }: PickRingActionType
+): GameState => {
+  console.log("pickRingReducer reducer", pickedRing);
+  return {
+    ...state,
+    board: {
+      ...state.board,
+      players: {
+        ...state.board.players,
+        [pickedRing.color]: {
+          ...state.board.players[pickedRing.color],
+          isPicked: true,
+        },
+      },
+    },
+    pickedRing,
+  };
 };
 
-export const pickRingAction = (player: Player, pickedRing: Ring) => async (
+export const pickRingAction = (pickedRing: Ring) => async (
   dispatch: Dispatch<PickRingActionType>,
   state: GameState
 ) => {
+  console.log("pickRingAction reducer", pickedRing);
   dispatch({
     code: PickRingActionCode,
-    player,
     pickedRing,
   });
 };

@@ -17,6 +17,7 @@ import {
 import { Board } from "./board/model/Board";
 import { RingColor } from "./ring/model/RingColor";
 import { RingSize } from "./ring/model/RingSize";
+import { Ring } from "./ring/model/Ring";
 
 export type GameActionType =
   | DropRingActionType
@@ -25,6 +26,7 @@ export type GameActionType =
 
 export type GameState = {
   board: Board;
+  pickedRing: Ring | undefined;
 };
 
 export type GameAction = (
@@ -71,12 +73,28 @@ const gameReducer = (state: GameState, action: GameActionType): GameState => {
 const emptyBoard: Board = {
   grid: {
     "01": {
-      [RingSize.MEDIUM]: { size: RingSize.MEDIUM, color: RingColor.COLOR_4 },
-      [RingSize.LARGE]: { size: RingSize.LARGE, color: RingColor.COLOR_3 },
-      [RingSize.SMALL]: { size: RingSize.SMALL, color: RingColor.COLOR_1 },
+      [RingSize.MEDIUM]: {
+        size: RingSize.MEDIUM,
+        color: RingColor.COLOR_4,
+        isPicked: false,
+      },
+      [RingSize.LARGE]: {
+        size: RingSize.LARGE,
+        color: RingColor.COLOR_3,
+        isPicked: false,
+      },
+      [RingSize.SMALL]: {
+        size: RingSize.SMALL,
+        color: RingColor.COLOR_1,
+        isPicked: false,
+      },
     },
     "12": {
-      [RingSize.SMALL]: { size: RingSize.SMALL, color: RingColor.COLOR_2 },
+      [RingSize.SMALL]: {
+        size: RingSize.SMALL,
+        color: RingColor.COLOR_2,
+        isPicked: false,
+      },
     },
   },
   players: {
@@ -87,17 +105,27 @@ const emptyBoard: Board = {
       cells: [
         {},
         {
-          [RingSize.SMALL]: { size: RingSize.SMALL, color: RingColor.COLOR_1 },
+          [RingSize.SMALL]: {
+            size: RingSize.SMALL,
+            color: RingColor.COLOR_1,
+            isPicked: false,
+          },
           [RingSize.MEDIUM]: {
             size: RingSize.MEDIUM,
             color: RingColor.COLOR_1,
+            isPicked: false,
           },
-          [RingSize.LARGE]: { size: RingSize.LARGE, color: RingColor.COLOR_1 },
+          [RingSize.LARGE]: {
+            size: RingSize.LARGE,
+            color: RingColor.COLOR_1,
+            isPicked: false,
+          },
         },
         {
           [RingSize.MEDIUM]: {
             size: RingSize.MEDIUM,
             color: RingColor.COLOR_1,
+            isPicked: false,
           },
         },
       ],
@@ -112,11 +140,20 @@ const emptyBoard: Board = {
           [RingSize.LARGE]: {
             size: RingSize.LARGE,
             color: RingColor.COLOR_2,
+            isPicked: true,
           },
         },
         {
-          [RingSize.SMALL]: { size: RingSize.SMALL, color: RingColor.COLOR_2 },
-          [RingSize.LARGE]: { size: RingSize.LARGE, color: RingColor.COLOR_2 },
+          [RingSize.SMALL]: {
+            size: RingSize.SMALL,
+            color: RingColor.COLOR_2,
+            isPicked: false,
+          },
+          [RingSize.LARGE]: {
+            size: RingSize.LARGE,
+            color: RingColor.COLOR_2,
+            isPicked: false,
+          },
         },
         {},
       ],
@@ -127,6 +164,7 @@ const emptyBoard: Board = {
 
 const initialState = {
   board: emptyBoard,
+  pickedRing: undefined,
 };
 
 export const GameContext = createContext<GameStateWithDispatch>({

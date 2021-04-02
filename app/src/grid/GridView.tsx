@@ -15,7 +15,7 @@ export const GridView = ({ grid }: Props) => {
           const cellKey = `${rowIndex}${colIndex}` as GridCoordinate;
           return (
             <div key={cellKey} className="Grid--Cell">
-              <CellView cell={grid[cellKey]} />
+              <CellView cell={grid[cellKey]} onRingClick={() => {}} />
             </div>
           );
         })
