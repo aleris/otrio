@@ -16,9 +16,6 @@ export const HomePage = () => {
             <Link to="/board">Board Test</Link>
           </li>
           <li>
-            <Link to="/ring">Ring Test</Link>
-          </li>
-          <li>
             <Link to="/grid">Grid Test</Link>
           </li>
           <li>

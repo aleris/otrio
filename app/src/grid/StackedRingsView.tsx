@@ -3,19 +3,21 @@ import React from "react";
 import { RingSize } from "../ring/model/RingSize";
 import { RingView } from "../ring/RingView";
 import { Cell } from "./model/Cell";
+import { Ring } from "../ring/model/Ring";
 
 type Props = {
   cell: Cell | undefined;
+  onClick: (ring: Ring) => void;
 };
 
-export const StackedRingsView = ({ cell }: Props) => {
+export const StackedRingsView = ({ cell, onClick }: Props) => {
   const ringSizeList = [RingSize.SMALL, RingSize.MEDIUM, RingSize.LARGE];
   const rings = ringSizeList.map((size) => cell?.[size]);
   return (
     <div className="StackedRings">
-      {rings.map((ring) => (
-        <div className="StackedRings--Ring">
-          {ring ? <RingView color={ring.color} size={ring.size} /> : null}
+      {rings.map((ring, index) => (
+        <div key={index} className="StackedRings--Ring">
+          {ring ? <RingView ring={ring} onClick={() => onClick(ring)} /> : null}
         </div>
       ))}
     </div>

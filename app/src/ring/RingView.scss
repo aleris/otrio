@@ -7,12 +7,16 @@
   justify-content: center;
   align-items: center;
 
+  pointer-events: none;
+
   svg {
     height: 100%;
     width: 100%;
+    pointer-events: none;
 
     path {
       fill: red;
+      pointer-events: all;
     }
   }
 
@@ -59,6 +63,14 @@
     svg {
       width: 75%;
       height: 75%;
+    }
+  }
+
+  &--Picked {
+    svg {
+      path {
+        filter: drop-shadow(6px -6px 3px rgba(0, 0, 0, 0.75));
+      }
     }
   }
 }
