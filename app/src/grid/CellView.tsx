@@ -12,7 +12,7 @@ type Props = {
 export const CellView = ({ cell, onRingClick }: Props) => {
   return (
     <div className="Cell">
-      <StackedRingsView cell={cell} onClick={onRingClick} />
+      <StackedRingsView cell={cell} onRingClick={onRingClick} />
     </div>
   );
 };

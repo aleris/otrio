@@ -15,9 +15,9 @@ import {
   playerJoinReducer,
 } from "./actions/PlayerJoinAction";
 import { Board } from "./board/model/Board";
+import { PickedRing } from "./ring/model/PickedRing";
 import { RingColor } from "./ring/model/RingColor";
 import { RingSize } from "./ring/model/RingSize";
-import { Ring } from "./ring/model/Ring";
 
 export type GameActionType =
   | DropRingActionType
@@ -26,7 +26,7 @@ export type GameActionType =
 
 export type GameState = {
   board: Board;
-  pickedRing: Ring | undefined;
+  pickedRing: PickedRing | undefined;
 };
 
 export type GameAction = (
@@ -140,7 +140,7 @@ const emptyBoard: Board = {
           [RingSize.LARGE]: {
             size: RingSize.LARGE,
             color: RingColor.COLOR_2,
-            isPicked: true,
+            isPicked: false,
           },
         },
         {

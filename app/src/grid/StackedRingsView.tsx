@@ -7,17 +7,19 @@ import { Ring } from "../ring/model/Ring";
 
 type Props = {
   cell: Cell | undefined;
-  onClick: (ring: Ring) => void;
+  onRingClick: (ring: Ring) => void;
 };
 
-export const StackedRingsView = ({ cell, onClick }: Props) => {
+export const StackedRingsView = ({ cell, onRingClick }: Props) => {
   const ringSizeList = [RingSize.SMALL, RingSize.MEDIUM, RingSize.LARGE];
   const rings = ringSizeList.map((size) => cell?.[size]);
   return (
     <div className="StackedRings">
       {rings.map((ring, index) => (
         <div key={index} className="StackedRings--Ring">
-          {ring ? <RingView ring={ring} onClick={() => onClick(ring)} /> : null}
+          {ring ? (
+            <RingView ring={ring} onClick={() => onRingClick(ring)} />
+          ) : null}
         </div>
       ))}
     </div>

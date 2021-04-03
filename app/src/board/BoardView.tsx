@@ -2,19 +2,23 @@ import "./BoardView.scss";
 import React from "react";
 import classNames from "classnames";
 import { GridView } from "../grid/GridView";
+import { PickedRing } from "../ring/model/PickedRing";
 import { Board } from "./model/Board";
 import { BlockDebugView } from "./BlockDebugView";
 import { RingColor } from "../ring/model/RingColor";
 import { PlayerView } from "../player/PlayerView";
-import { Ring } from "../ring/model/Ring";
 
 type Props = {
   board: Board;
   debugView?: boolean;
-  onRingClick: (ring: Ring) => void;
+  onPlayerRingClick: (pickedRing: PickedRing) => void;
 };
 
-export const BoardView = ({ board, onRingClick, debugView = false }: Props) => {
+export const BoardView = ({
+  board,
+  onPlayerRingClick,
+  debugView = false,
+}: Props) => {
   const className = classNames("Board", { debugView });
   const playerTop = board.players[RingColor.COLOR_1];
   const playerRight = board.players[RingColor.COLOR_2];
@@ -31,7 +35,7 @@ export const BoardView = ({ board, onRingClick, debugView = false }: Props) => {
           {playerTop !== undefined ? (
             <PlayerView
               player={playerTop}
-              onRingClick={onRingClick}
+              onRingClick={onPlayerRingClick}
               layout="Horizontal"
             />
           ) : null}
@@ -46,7 +50,7 @@ export const BoardView = ({ board, onRingClick, debugView = false }: Props) => {
           {playerLeft !== undefined ? (
             <PlayerView
               player={playerLeft}
-              onRingClick={onRingClick}
+              onRingClick={onPlayerRingClick}
               layout="Vertical"
             />
           ) : null}
@@ -58,7 +62,7 @@ export const BoardView = ({ board, onRingClick, debugView = false }: Props) => {
           {playerRight !== undefined ? (
             <PlayerView
               player={playerRight}
-              onRingClick={onRingClick}
+              onRingClick={onPlayerRingClick}
               layout="Vertical"
             />
           ) : null}
@@ -73,7 +77,7 @@ export const BoardView = ({ board, onRingClick, debugView = false }: Props) => {
           {playerBottom !== undefined ? (
             <PlayerView
               player={playerBottom}
-              onRingClick={onRingClick}
+              onRingClick={onPlayerRingClick}
               layout="Horizontal"
             />
           ) : null}
