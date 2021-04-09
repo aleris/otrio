@@ -1,23 +1,22 @@
 import "./BoardTableView.scss";
 import React, { useContext } from "react";
+import { PickedRing } from "../ring/model/PickedRing";
 import { BoardView } from "./BoardView";
 import { GameContext } from "../GameContext";
-import { Ring } from "../ring/model/Ring";
 import { pickRingAction } from "../actions/PickRingActionType";
 
 export const BoardTableView = () => {
   const { state, dispatch } = useContext(GameContext);
 
-  const handleOnRingClick = (ring: Ring) => {
-    console.log("ring in boardTableView", ring);
-    dispatch(pickRingAction(ring));
+  const handleOnPlayerRingClick = (pickedRing: PickedRing) => {
+    dispatch(pickRingAction(pickedRing));
   };
 
   return (
     <div className="BoardTable">
       <BoardView
         board={state.board}
-        onRingClick={handleOnRingClick}
+        onPlayerRingClick={handleOnPlayerRingClick}
         debugView={true}
       />
     </div>
